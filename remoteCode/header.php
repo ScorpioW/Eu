@@ -22,17 +22,17 @@
 			<div class="wrapper style1">
 
 				<!-- Header -->
-					<div id="header" class="skel-panels-fixed">
+					<div id="header" style="height: 70px;" class="skel-panels-fixed">
 						<div id="logo">
-							<h1><a href="index.html">Contacto</a></h1>
-							<span class="tag">ParSis</span>
+							<h5><a href="index.html">Contacto</a> <span class="tag">ParSis</span></h5>
+							
 						</div>
 						<nav id="nav">
 							<ul>
 								<li class="active"><a href="index.html">Homepage</a></li>
 								<li><a href="left-sidebar.html">Left Sidebar</a></li>
 								<li><a href="right-sidebar.html">Right Sidebar</a></li>
-								<li><a href="no-sidebar.php">No Sidebar</a></li>
+								<li><a href="pesquisaadmin.php">Admin</a></li>
 							</ul>
 						</nav>
 					</div>
