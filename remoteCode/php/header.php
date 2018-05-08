@@ -24,7 +24,7 @@
 				<!-- Header -->
 					<div id="header" class="skel-panels-fixed">
 						<div id="logo">
-							<h1><a href="index.html">Contacto</a></h1>
+							<h1><a href="index.php">Contacto</a></h1>
 							<span class="tag">ParSis</span>
 						</div>
 						<nav id="nav">
@@ -32,7 +32,7 @@
 								<li class="active"><a href="index.php">Homepage</a></li>
 								<li><a href="left-sidebar.php">Left Sidebar</a></li>
 								<li><a href="right-sidebar.php">Right Sidebar</a></li>
-								<li><a href="no-sidebar.php">No Sidebar</a></li>
+								<li><a href="pesquisaadmin.php">Admin</a></li>
 							</ul>
 						</nav>
 					</div>
