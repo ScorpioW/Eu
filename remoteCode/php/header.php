@@ -14,6 +14,8 @@
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-wide.css" />
 		</noscript>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
 	<body>
@@ -22,16 +24,16 @@
 			<div class="wrapper style1">
 
 				<!-- Header -->
-					<div id="header" class="skel-panels-fixed">
+					<div id="header" style="height: 70px;" class="skel-panels-fixed">
 						<div id="logo">
-							<h1><a href="index.php">Contacto</a></h1>
-							<span class="tag">ParSis</span>
+							<h5><a href="index.html">Contacto</a> <span class="tag">ParSis</span></h5>
+							
 						</div>
 						<nav id="nav">
 							<ul>
-								<li class="active"><a href="index.php">Homepage</a></li>
-								<li><a href="left-sidebar.php">Left Sidebar</a></li>
-								<li><a href="right-sidebar.php">Right Sidebar</a></li>
+								<li class="active"><a href="index.html">Homepage</a></li>
+								<li><a href="left-sidebar.html">Left Sidebar</a></li>
+								<li><a href="right-sidebar.html">Right Sidebar</a></li>
 								<li><a href="pesquisaadmin.php">Admin</a></li>
 							</ul>
 						</nav>
