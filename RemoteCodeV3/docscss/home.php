@@ -31,7 +31,7 @@
 								<section class="4u"> <a href="pesqlocalidade.php" class="image featured"><img src="images/pic03.jpg" alt=""></a>
 									<div class="box">
 										<p><strong>Localidade</strong> </p>
-										<a href="pesqlocalidade" class="button">Read More</a> </div>
+										<a href="pesqlocalidade.php" class="button">Read More</a> </div>
 								</section>
 							</div>
 							
