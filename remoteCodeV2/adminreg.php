@@ -11,7 +11,7 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
-<?php include("php/header.php") ?>		
+<?php include("php/header.php"); ?>		
 <!-- Page -->
 	<div id="page" class="container">
 		<section>
@@ -20,11 +20,14 @@
 				
 			</header>
     		<form action="" method="post">
-	            Login: <input type="text" name="login" placeholder="Login" style="border: 1px solid grey"><br>
-	            Password:<input type="password" name="pass1" placeholder="Password" style="border: 1px solid grey"><br>
-	            Confirmar Password :<input type="password" name="pass2" placeholder="Confirme Password" style="border: 1px solid grey"><br>
-	            Id do contacto :<input type="text" name="idcont" style="border: 1px solid grey"><br>
-	            Direitos :<input type="text" name="direitos" style="border: 1px solid grey"><br>
+	            Login: <input type="text" name="login" placeholder="Login" class="textbox"><br>
+	            Password:<input type="password" name="pass1" placeholder="Password" class="textbox"><br>
+	            Confirmar Password :<input type="password" name="pass2" placeholder="Confirme Password" class="textbox"><br>
+	            Id do contacto :<input type="text" name="idcont" class="textbox"><br>
+	            <select name="direitos">
+				  <option value="Admin">Admin (cria e altera contactos)</option>
+				  <option value="User">User (lê dados)</option>
+				</select>
 	            <input type="submit" name="submit" value="Registar">
 	            <input type="reset" value="Limpar">
 	            <?php include("php/reguser.php"); ?>
@@ -34,6 +37,6 @@
 <!-- /Page -->
 
 </div>
-	<?php include("php/footer.php") ?>
+	<?php include("php/footer.php"); ?>
 	</body>
 </html>
