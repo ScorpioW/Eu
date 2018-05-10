@@ -27,8 +27,7 @@ $num_registos=mysqli_num_rows($faz_procura);
 										}
 										echo 'Nº Total de registos'.$num_registos;
 										?>
-										<body bgcolor="#9bd3ec">
-										<br><br>
+										
 										<table border="1">
 											<tr><td><b>Login<td><b>Pass<td><b>id_contacto<td><b>Direitos<td><b>Editar<td><b>Apagar
 										<?php  
