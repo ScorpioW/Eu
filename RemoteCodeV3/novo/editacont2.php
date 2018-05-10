@@ -1,9 +1,9 @@
 <?php  
 include("../php/DB.php");
 $id=$_GET['id'];
-$lista="SELECT Contacto.id, isEmpresa, nome, morada, codP, area, Localidade, telefone, email
+$lista="SELECT isEmpresa, nome, morada, codP, area, Localidade, telefone, email
             FROM Contacto, Telefone, Email
-            WHERE Contacto.id = Telefone.id_contacto AND Contacto.id = Email.id_contacto";
+			WHERE Contacto.id = Telefone.id_contacto AND Contacto.id = Email.id_contacto AND Contacto.id = $id";
 $faz_editar=mysqli_query($link, $lista);
 $registos=mysqli_fetch_array($faz_editar);
 ?>
@@ -19,8 +19,6 @@ $registos=mysqli_fetch_array($faz_editar);
 				<h2>Editar Contactos</h2>
 			</header>
 						<form action="atualizacont.php?id=<?php echo $id;?>" method="POST">
-							ID:
-							<input type="text" name="nome" value='<?php echo $registos['id'];?>'>
 							isEmpresa:
 							<input type="numeric" name="isEmpresa"  value='<?php echo $registos['isEmpresa'];?>'> <br>
 							Nome:

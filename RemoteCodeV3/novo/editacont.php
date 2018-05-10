@@ -1,17 +1,17 @@
 <?php  
 	include("../php/DB.php");
-	include("../php/validar.php");
-    $lista="SELECT Contacto.id, isEmpresa, nome, morada, codP, area, Localidade, telefone, email
+    include("../php/validar.php");
+    $lista="SELECT isEmpresa, nome, morada, codP, area, Localidade, telefone, email
             FROM Contacto, Telefone, Email
             WHERE Contacto.id = Telefone.id_contacto AND Contacto.id = Email.id_contacto
-            GROUP BY nome";
+            GROUP BY Contacto.id";
 	$faz_lista=mysqli_query($link, $lista);
 	$num_registos=mysqli_num_rows($faz_lista);
-	$lista2="SELECT id
-            FROM Contacto";
-	$faz_lista2=mysqli_query($link, $lista2);
-    $reg = mysqli_fetch_array($faz_lista2);
-    echo ($reg['id']);
+	$lista2="SELECT id FROM Contacto";
+    $faz_lista2=mysqli_query($link, $lista2);
+   /*$registosid=mysqli_fetch_array($faz_lista2);
+    $id=utf8_encode($registosid['id']);#vai buscar o id ?
+    print_r($id. "<br>"); */
 ?>
 
 <!DOCTYPE HTML>
@@ -33,8 +33,8 @@
 								{
 									$registos=mysqli_fetch_array($faz_lista);
 									$registosid=mysqli_fetch_array($faz_lista2);
-									$id=utf8_encode($registos['id']);#vai buscar o id ?
-									echo '<tr>';
+                                    $id=utf8_encode($registosid['id']);#vai buscar o id ?
+                                    echo '<tr>';
 									echo '<td>'.$registos["isEmpresa"]. '</td>';
 									echo '<td>'.$registos["nome"]. '</td>';
 									echo '<td>'.$registos["morada"]. '</td>';
