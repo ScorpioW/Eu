@@ -23,7 +23,7 @@ $faz_actualizar=mysqli_query($link, "Update Email SET email='".$email."', email2
 	<div id="page" class="container">
 		<section>
 			<header class="major">
-				<h2>Atualiza Contactos</h2>
+				<h2>Atualiza Users</h2>
 			</header>
 				<form action="editacont.php">
 					<input type="submit" value="Voltar">
