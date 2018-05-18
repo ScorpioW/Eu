@@ -1,11 +1,11 @@
 <?php  
 	include("php/DB.php");
 	include("php/validarAdmin.php");
-	$lista="SELECT isEmpresa, nome, morada, codP, area, Localidade, telefone, telefone2, email, email2
+	$lista="SELECT Contacto.id, isEmpresa, nome, morada, codP, area, Localidade, telefone, telefone2, email, email2
             FROM Contacto, Telefone, Email
             WHERE Contacto.id = Telefone.id_contacto 
 			AND Contacto.id = Email.id_contacto
-			ORDER BY isEmpresa";
+			ORDER BY Contacto.id";
 	$faz_lista=mysqli_query($link, $lista);
 	$num_registos=mysqli_num_rows($faz_lista);
 	$lista2="SELECT id FROM Contacto";
@@ -26,14 +26,15 @@
 						{
 							$registos=mysqli_fetch_array($faz_lista);
 							$registosid=mysqli_fetch_array($faz_lista2);
-							$id=utf8_encode($registosid['id']);
+							$id=utf8_encode($registosid['0']);
 							$empresa = "";
 							if ($registos["isEmpresa"] == 0)
 							{
 								$qSTR = "SELECT nome FROM empresa
-										WHERE empresa.id = $id";
+										WHERE empresa.id = '".$registos['id']."'";
 								$empresaQ = mysqli_query($link, $qSTR);
 								$empresaA = mysqli_fetch_array($empresaQ);
+								echo $empresaA;
 								if ($empresaA[0] == "")
 								{
 									$empresa = "Não";
@@ -54,8 +55,8 @@
 							echo '<td>'.$registos["Localidade"]. '</td>';
 							echo '<td>'.$registos["telefone"]. ' <br> '.$registos['telefone2'].'</td>';
 							echo '<td>'.$registos["email"]. ' <br> '.$registos['email2'].'</td>';
-							echo '<td> <a href="editacont2.php?id='.$id.'">Editar</a></td>';
-							echo '<td> <a href="apagarcont.php?id='.$id.'">Apagar</a></td>';	
+							echo '<td> <a href="editacont2.php?id='.$registos[0].'">Editar</a></td>';
+							echo '<td> <a href="apagarcont.php?id='.$registos[0].'">Apagar</a></td>';	
 							echo '</tr>';
 						}
 						?>
