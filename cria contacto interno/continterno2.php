@@ -57,8 +57,10 @@
 														{
 																$s = $select[0];
 														}
-														$inserir2 = "INSERT INTO Interno2(nome, extensao, local) VALUES ('".$nome."', '".$emp."',".$s.")";
+														$inserir2 = "INSERT INTO Interno(nome, extensao, local, id_contacto) VALUES ('".$nome."', '".$emp."',".$local.",".$s.")";
 														}
+
+
 														mysqli_query($link, $inserir2) or die("Inserir 2");
 														$inserir3="INSERT INTO Email(id_contacto, email, email2) VALUES (".$s.", ".$em.", ".$em2.")";
 														mysqli_query($link,$inserir3) or die("Inserir 3");
