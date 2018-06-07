@@ -1,0 +1,27 @@
+/* Checkbox Hack */
+
+#test {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+ }
+ label#lbl { 
+   -webkit-appearance: push-button;
+   -moz-appearance: button; 
+   display: inline-block;
+   margin: 60px 0 10px 0;
+   cursor: pointer;
+ }
+ 
+ /* Default State */
+ .mais {    
+	background: green;
+	line-height: 100px;
+	color: white;
+	text-align: center;
+ }
+ 
+ /* Toggled State */
+ #test:checked ~ .mais {
+	display: none;
+ }
