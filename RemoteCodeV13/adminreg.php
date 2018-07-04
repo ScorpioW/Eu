@@ -46,8 +46,12 @@
 			Localidade da Empresa: <input type="text" name="local" id="Loc" placeholder="Ex.: Belém" disabled="true"><br>
 			Extensão: <input type="numeric" size="2" name="ext" id="Ext" placeholder="Ex.: 999" disabled="true"><br><br>
 			Privilégios: <font size="2" color="red">&nbsp;*</font> &nbsp;&nbsp;&nbsp;
-			<input type="radio" name="priv" value="Admin"> Administrador &nbsp; &nbsp; 
-			<input type="radio" name="priv" value="User" checked="true"> Utilizador <br><br>
+					<input type="checkbox" name="cons" id="cons" value="cons"<?php if(isset($_POST['cons'])){echo $checked;}?>/>
+					<label for="cons">Consultar dados</label>
+					<input type="checkbox" name="modi" id="modi" value="modi"<?php if(isset($_POST['modi'])){echo $checked;}?>/>&nbsp;
+					<label for="modi">Inserir/Modificar dados</label><br>
+					<input type="checkbox" name="apag" id="apag" value="apag"<?php if(isset($_POST['apag'])){echo $checked;}?>/>&nbsp;&nbsp;&nbsp;
+					<label for="apag">Apagar dados</label><br>
 			<font size="2" color="red">&nbsp;&nbsp;&nbsp;&nbsp;*Campos de preenchimento obrigatório</font><br><br>
 			<input type="submit" name="submit" value="Registar">
 			<input type="reset" value="Limpar">
@@ -58,8 +62,25 @@
 </div>
 </div>
 </div>
-<?php include("php/footer.php") ?>
+<?php include("php/footer.php") 
 
+if (isset($_POST['cons']) && !isset($_POST['modi']) && !isset($_POST['apag'])) 
+{
+	$priv = "User_cons";
+} 
+elseif (isset($_POST['cons']) && isset($_POST['modi']) && !isset($_POST['apag']) || !isset($_POST['cons']) && isset($_POST['modi']) && !isset($_POST['apag']))//Se escolher Inserir e colsultar dados ou só inserir  
+{
+	$priv="User_inser";
+} 
+elseif (isset($_POST['cons']) && isset($_POST['modi']) && isset($_POST['apag']) || isset($_POST['cons']) && !isset($_POST['modi']) && isset($_POST['apag']))//Se selecionar todos ou selecionar consulta e apagar
+{
+	$priv="User_apag";
+} 
+else
+{
+	$priv="User_inact";
+}
+?>
 <script>
 	function mask(id)
 	{
@@ -122,4 +143,9 @@
 			document.getElementById("Loc").disabled = false;
 		}
 	}
+
+	$('#modi').click(function() 
+	{
+		$('input[cons]').prop('checked', true);
+	});
 </script>
